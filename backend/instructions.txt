@@ -1,0 +1,42 @@
+# Setting Up and Running the Flask Backend
+
+### **Step 1: Create a Virtual Environment (Optional but Recommended)**
+```sh
+python -m venv venv
+source venv/bin/activate  # On macOS/Linux
+venv\Scripts\activate    # On Windows
+```
+
+### **Step 2: Install Dependencies**
+```sh
+pip install -r requirements.txt
+```
+
+### **Step 3: Run the Flask App**
+```sh
+python backend/main.py
+```
+
+### **Step 4: Test the API**
+Use **Postman** or **cURL** to test:
+```sh
+curl -X POST "http://127.0.0.1:5000/predict" -H "Content-Type: application/json" -d '{
+    "City": "Nairobi",
+    "Place": "Harry Thuku Rd",
+    "ReviewsCount": 700,
+    "Rating": 5.0,
+    "Single_room": 130,
+    "Double_room": 160,
+    "Season": "Hot/Dry"
+}'
+```
+
+If successful, you should receive:
+```json
+{"predicted_price": 200.0}
+```
+
+### **Step 5: Deploy the Backend (Optional)**
+For deployment, consider **Docker**, **Heroku**, or **AWS/GCP**.
+
+
